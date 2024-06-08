@@ -1,0 +1,48 @@
+/* src/BrewerySearch.css */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.results-container {
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.results-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result-card h3 {
+    margin-top: 0;
+}
+
+.result-card p {
+    margin: 5px 0;
+}
+
+.result-card a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.result-card a:hover {
+    text-decoration: underline;
+}
