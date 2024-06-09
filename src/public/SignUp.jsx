@@ -89,7 +89,7 @@ const SignUp = () => {
                             <input
                               type="email"
                               className="border-0 border-bottom border-dark w-100"
-                              placeholder="Email or Phone Number"
+                              placeholder="Email"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                               required

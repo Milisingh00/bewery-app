@@ -41,7 +41,7 @@ const Login = () => {
                 <div className="row g-0">
                   <div>
                     <div className="card-body p-md-5 text-black">
-                      <h3 className="mb-3">Log in to Exclusive</h3>
+                      <h3 className="mb-3">Log in </h3>
                       <h6>Enter your details below</h6>
                       <form onSubmit={handleSubmit}>
                         {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -51,7 +51,7 @@ const Login = () => {
                               <input
                                 type="email"
                                 className="border-0 border-bottom border-dark w-25"
-                                placeholder="Email or Phone Number"
+                                placeholder="Email"
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                               />
