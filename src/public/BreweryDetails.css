@@ -1,0 +1,69 @@
+.brewery-details {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.brewery-details h2 {
+    margin-top: 0;
+}
+
+.brewery-details p {
+    margin: 10px 0;
+}
+
+.brewery-details a {
+    color:crimson;
+    text-decoration: none;
+}
+
+.brewery-details a:hover {
+    text-decoration: underline;
+}
+
+.orange-star {
+    color: orange;
+  }
+  
+  .user-name-box,
+  .description-box {
+    margin-top: 20px;
+  }
+  
+  input,
+  textarea {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: crimson;
+  }
+  
+  .ratings-list {
+    margin-top: 20px;
+  }
+  
+  .rating-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }

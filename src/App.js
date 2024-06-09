@@ -1,9 +1,9 @@
 
 import './App.css';
-import SignUp from './Component/SignUp';
-import Login from './Component/Login'
-import HomePage from './Component/HomePage';
-import BreweryDetails from './Component/BreweryDetails'
+import SignUp from './public/SignUp';
+import Login from './public/Login'
+import HomePage from './public/HomePage';
+import BreweryDetails from './public/BreweryDetails'
 import { BrowserRouter,Routes,Route  } from "react-router-dom";
 
 

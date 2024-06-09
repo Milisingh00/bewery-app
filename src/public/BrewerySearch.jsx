@@ -1,4 +1,3 @@
-// src/BrewerySearch.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -44,23 +43,23 @@ const BrewerySearch = () => {
 
     return (
         <div>
-            <h2>Brewery Search</h2>
+            <h2 className='d-flex justify-content-center p-2 text-danger'>Brewery Search</h2>
             <div className="search-container">
-                <label>
+                <label >
                     Search by:
-                    <select value={searchType} onChange={(e) => setSearchType(e.target.value)}>
+                    <select className='drop-down' value={searchType} onChange={(e) => setSearchType(e.target.value)}>
                         <option value="by_city">City</option>
                         <option value="by_name">Name</option>
                         <option value="by_type">Type</option>
                     </select>
                 </label>
                 <input
-                    type="text"
+                    type="text" className='search-bar'
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder={`Search by ${searchType.replace('by_', '')}`}
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button className= "btn btn-danger button-size" onClick={handleSearch}>Search</button>
             </div>
             <div className="results-container">
                 {results.length > 0 ? (
@@ -77,7 +76,8 @@ const BrewerySearch = () => {
                         ))}
                     </ul>
                 ) : (
-                    <p>No results found</p>
+                    
+                    <p >No results found</p>
                 )}
             </div>
         </div>

@@ -37,9 +37,9 @@ const Login = () => {
         <div className="container py-5">
           <div className="row d-flex">
             <div className="col">
-              <div className="card justify-content-center align-items-center my-4">
+              <div className="card justify-content-left align-items-left my-4">
                 <div className="row g-0">
-                  <div className="ol-xl-5 justify-content-center align-items-center">
+                  <div>
                     <div className="card-body p-md-5 text-black">
                       <h3 className="mb-3">Log in to Exclusive</h3>
                       <h6>Enter your details below</h6>
@@ -50,7 +50,7 @@ const Login = () => {
                             <div className="form-outline">
                               <input
                                 type="email"
-                                className="border-0 border-bottom border-dark"
+                                className="border-0 border-bottom border-dark w-25"
                                 placeholder="Email or Phone Number"
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
@@ -62,7 +62,7 @@ const Login = () => {
                               <div className="form-outline">
                                 <input
                                   type="password"
-                                  className="border-0 border-bottom border-dark"
+                                  className="border-0 border-bottom border-dark w-25"
                                   placeholder="Password"
                                   onChange={(e) => setPassword(e.target.value)}
                                   required
@@ -71,14 +71,14 @@ const Login = () => {
                             </div>
                           </div>
                           <div className="pt-3">
-                            <button className="btn btn-danger btn-lg">
-                              Login
+                            <button className="btn btn-danger btn-lg ps-5 pe-5">
+                              Login 
                             </button>
                           </div>
                           <div>
                             <Link to="/signup">
                               <button
-                                className="btn btn-lg ms-2 mt-2"
+                                className="btn btn-lg  mt-2"
                                 style={{ backgroundColor: "lightgrey" }}
                               >
                                 New Account

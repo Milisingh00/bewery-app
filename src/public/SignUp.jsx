@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth, db } from './firebase'; // Adjust the path as needed
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
 const SignUp = () => {
@@ -28,8 +28,18 @@ const SignUp = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
+      await updateProfile(user, { displayName: name });
+
+      await setDoc(doc(db, 'users', user.uid), {
+        uid: user.uid,
+        name,
+        email,
+        createdAt: new Date(),
+      });
+
       console.log('User created successfully, navigating...');
-      navigate('/');  // Ensure this route exists in your React Router configuration
+      navigate('/', { state: { name } });  // Pass name to the home page
     } catch (err) {
       console.error('Firebase registration error:', err);
       if (err.code === 'auth/email-already-in-use') {
@@ -64,8 +74,9 @@ const SignUp = () => {
                           <div className="form-outline">
                             <input
                               type="text"
-                              className="border-0 border-bottom border-dark"
+                              className="border-0 border-bottom border-dark w-100"
                               placeholder="Name"
+                              value={name}
                               onChange={(e) => setName(e.target.value)}
                               required
                             />
@@ -77,8 +88,9 @@ const SignUp = () => {
                           <div className="form-outline">
                             <input
                               type="email"
-                              className="border-0 border-bottom border-dark"
+                              className="border-0 border-bottom border-dark w-100"
                               placeholder="Email or Phone Number"
+                              value={email}
                               onChange={(e) => setEmail(e.target.value)}
                               required
                             />
@@ -89,8 +101,9 @@ const SignUp = () => {
                             <div className="form-outline">
                               <input
                                 type="password"
-                                className="border-0 border-bottom border-dark"
+                                className="border-0 border-bottom border-dark w-100"
                                 placeholder="Password"
+                                value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                               />
@@ -102,8 +115,9 @@ const SignUp = () => {
                             <div className="form-outline">
                               <input
                                 type="password"
-                                className="border-0 border-bottom border-dark"
+                                className="border-0 border-bottom border-dark w-100"
                                 placeholder="Confirm Password"
+                                value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 required
                               />
@@ -117,15 +131,14 @@ const SignUp = () => {
                         </button>
                       </div>
                     </form>
-                    <div className="d-flex gap-3 pt-3">
+                    <div className="d-flex gap-3 pt-3 ">
                       <p>Already have an account?</p>
                       <Link to="/">
-                        <span>Log in</span>
+                        <span className='text-danger text-decoration-none'>Log in</span>
                       </Link>
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-4 d-xl-block"></div>
               </div>
             </div>
           </div>
